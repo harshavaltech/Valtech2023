@@ -41,7 +41,7 @@ public class TwitterServlet extends HttpServlet {
 			}else {
 				System.out.println("I am here . . .");
 				out.println("<font color=red sie=20>LOGIN FALIED!..<br>");
-			out.println("<a href login.jsp>Try Again</a>");}
+			out.println("<a href Login.jsp>Try Again</a>");}
 		} catch (ClassNotFoundException e) {
 			
 			// TODO Auto-generated catch block
