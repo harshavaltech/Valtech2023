@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Card</title>
+    <style>
+        .login-card {
+            width: 300px;
+            margin: 0 auto;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            background: url('your-logo.png') no-repeat center center;
+            background-size: cover;
+            border-radius: 50%;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn-login {
+            padding: 10px 20px;
+            margin: 10px;
+            
+            
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+        .btn-main {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <div class="logo">
+            <img src="assets/download.png" alt="" height="50px">
+        </div>
+        <h1>Enter Twitter Credentials</h1>
+        
+        <button class="btn-login">Login from Google.com</button>
+        <button class="btn-login">Login from Apple.com</button>
+        <hr>
+        <form>
+            <input type="email" placeholder="Enter your Email">
+            <button class="btn-main">Login</button>
+        </form>
+        <button class="btn-login">Forgot Email?</button>
+    </div>
+</body>
+</html>
