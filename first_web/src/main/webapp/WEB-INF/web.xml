@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app id="WebApp_ID">
+<display-name>first_web</display-name>
+<filter>
+<filter-name> CounterFilter</filter-name>
+<filter-class>first_web.CounterFilter</filter-class>
+</filter>
+	<filter-mapping>
+	<filter-name>CounterFilter</filter-name>
+	<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<listener>
+	<listener-class>first_web.CounterLoaderListener</listener-class>
+	</listener>
+	<servlet>
+		<servlet-name>helloServlet</servlet-name>
+		<servlet-class>first_web.HelloServlet</servlet-class>
+		<init-param>
+		<param-name> driverClass</param-name>
+		<param-value>com.jdbc.mysql.Driver</param-value>
+		
+		</init-param>
+		<init-param>
+		<param-name> jdbc-url</param-name>
+		<param-value>jdbc:mysql://localhost:3380/valtech2023</param-value>
+		</init-param>
+		
+		<init-param>
+		<param-name> username</param-name>
+		<param-value>root</param-value>
+		</init-param>
+		
+		<init-param>
+		<param-name> password</param-name>
+		<param-value>root</param-value>
+		</init-param>
+		
+		<load-on-startup> 1 </load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>Login1_Servlet</servlet-name>
+		<display-name>Login1_Servlet</display-name>
+		<description></description>
+		<servlet-class>first_web.Login1_Servlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Login1_Servlet</servlet-name>
+		<display-name>Login1_Servlet</display-name>
+		<description></description>
+		<servlet-class>first_web.Login1_Servlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EmployeeServlet</servlet-name>
+		<servlet-class>first_web.EmployeeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EmployeeServlet</servlet-name>
+		<url-pattern>/empCtlr</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>helloServlet</servlet-name>
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet-mapping>
+		<servlet-name>Login1_Servlet</servlet-name>
+		<url-pattern>/Login1_Servlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Login1_Servlet</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+	
+	
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
