@@ -1,0 +1,51 @@
+pipeline {
+    agent any
+
+
+
+    stages {
+        stage('Checkout') {
+            steps {
+                script {
+                    dir(C:\Users\HarshaVardhan.SD\Desktop\jenkins_workspace) {
+                        if (!fileExists('.git')) {
+                            bat 'git init'
+                            bat 'git remote add origin https://github.com/IN-Valtech/CH_2023_Java_Team3.git'
+                        }
+                        bat 'git pull origin develop'
+                    }
+                }
+            }
+        }
+
+        stage('Build') {
+            steps {
+                script {
+                    dir(C:/Users/HarshaVardhan.SD/Desktop/jenkins_workspace/wecare) {
+                        bat 'mvn clean install'a
+                    }
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                script {
+                    dir(C:/Users/HarshaVardhan.SD/Desktop/jenkins_workspace/wecare) {
+                        bat 'mvn clean test'
+                    }
+                }
+            }
+        }
+
+        stage('Deploy to Local') {
+            steps {
+                script {
+                    dir(C:/Users/HarshaVardhan.SD/Desktop/jenkins_workspace/wecare) {
+                        bat 'mvn clean spring-boot:run'
+                    }
+                }
+            }
+        }
+    }
+}
